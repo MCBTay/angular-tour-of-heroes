@@ -12,6 +12,8 @@ import { HeroService } from '../hero.service';
 export class HeroDetailComponent implements OnInit {
   @Input() hero?: Hero;
 
+  powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
+
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
