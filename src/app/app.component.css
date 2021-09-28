@@ -2,21 +2,15 @@ h1 {
   margin-bottom: 0;
 }
 
-nav a {
-  padding: 1rem;
-  text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #e8e8e8;
-  color: #3d3d3d;
-  border-radius: 4px;
+ .mat-toolbar button {
+  margin: 0px 4px;
 }
 
-nav a:hover {
-  color: white;
-  background-color: #42545C;
+.mat-toolbar button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
-nav a.active {
+/*
+.mat-toolbar a.active {
   background-color: black;
-}
+} */
