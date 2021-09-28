@@ -34,6 +34,10 @@ export class HeroDetailComponent implements OnInit {
     this.location.back();
   }
 
+  newHero() {
+    this.hero = { id: 42, name: '', alterEgo: '', power: '' }
+  }
+
   save(): void {
     if (this.hero) {
       this.heroService.updateHero(this.hero)
