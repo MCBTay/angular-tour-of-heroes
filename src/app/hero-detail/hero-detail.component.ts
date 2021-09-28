@@ -38,7 +38,7 @@ export class HeroDetailComponent implements OnInit {
     this.hero = { id: 42, name: '', alterEgo: '', power: '' }
   }
 
-  save(): void {
+  onSubmit(): void {
     if (this.hero) {
       this.heroService.updateHero(this.hero)
           .subscribe(() => this.goBack());

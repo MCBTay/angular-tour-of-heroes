@@ -1,6 +1,6 @@
 <div *ngIf="hero" class="container">
   <h2>{{hero.name | uppercase}} Details</h2>
-  <form #heroForm="ngForm">
+  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
     <div class="form-group">
       <label for="name">Hero name: </label>
       <input type="text" class="form-control" id="name" 
@@ -26,7 +26,7 @@
       </select>
     </div>
     <button type="button" class="btn btn-default" (click)="goBack()">go back</button>
-    <button type="submit" class="btn btn-success" (click)="save()">save</button>
+    <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">save</button>
     <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
   </form>
 </div>
