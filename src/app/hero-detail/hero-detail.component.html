@@ -5,12 +5,17 @@
       <label for="name">Hero name: </label>
       <input type="text" class="form-control" id="name" 
         required 
-        [(ngModel)]="hero.name" name="name">
+        [(ngModel)]="hero.name" name="name" 
+        #name="ngModel">
+      <div [hidden]="name.valid || name.pristine"
+        class="alert alert-danger">
+        Name is required!
+      </div>
     </div>
     <div class="form-group">
       <label for="alter-ego">Alter Ego: </label>
       <input type="text" class="form-control" id="alter-ego" 
-        [(ngModel)]="hero.alterEgo" name="alter-ego">
+        [(ngModel)]="hero.alterEgo" name="alter-ego" />
     </div>
     <div class="form-group">
       <label for="power">Hero Power: </label>
