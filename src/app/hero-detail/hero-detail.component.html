@@ -1,19 +1,26 @@
 <div *ngIf="hero" class="container">
   <h2>{{hero.name | uppercase}} Details</h2>
-  <div class="form-group">
-    <label for="hero-name">Hero name: </label>
-    <input class="form-control" id="hero-name" [(ngModel)]="hero.name" placeholder="name">
-  </div>
-  <div class="form-group">
-    <label for="alter-ego">Alter Ego: </label>
-    <input class="form-control" id="alter-ego" [(ngModel)]="hero.alterEgo" placeholder="alterEgo">
-  </div>
-  <div class="form-group">
-    <label for="power">Hero Power: </label>
-    <select class="form-control" id="power" required>
-      <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-    </select>
-  </div>
-  <button type="button" class="btn btn-default" (click)="goBack()">go back</button>
-  <button type="button" class="btn btn-success" (click)="save()">save</button>
+  <form #heroForm="ngForm">
+    <div class="form-group">
+      <label for="name">Hero name: </label>
+      <input type="text" class="form-control" id="name" 
+        required 
+        [(ngModel)]="hero.name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="alter-ego">Alter Ego: </label>
+      <input type="text" class="form-control" id="alter-ego" 
+        [(ngModel)]="hero.alterEgo" name="alter-ego">
+    </div>
+    <div class="form-group">
+      <label for="power">Hero Power: </label>
+      <select class="form-control" id="power" 
+        required
+        [(ngModel)]="hero.power" name="power">
+        <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+      </select>
+    </div>
+    <button type="button" class="btn btn-default" (click)="goBack()">go back</button>
+    <button type="submit" class="btn btn-success" (click)="save()">save</button>
+  </form>
 </div>
