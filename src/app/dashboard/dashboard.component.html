@@ -1,13 +1,13 @@
 <div class="dashboard">
-  <h2>Top Heroes</h2>
-  <div class="heroes-menu">
+  <mat-card class="heroes-menu">
+    <mat-card-title>top heroes</mat-card-title>
     <button 
-      mat-raised-button color="accent"
+      mat-raised-button color="primary"
       *ngFor="let hero of heroes"
       routerLink="/detail/{{hero.id}}">
       {{hero.name}}
     </button>
-  </div>
+  </mat-card>
 
   <app-hero-search class="search"></app-hero-search>
 </div>
