@@ -25,8 +25,9 @@
         <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
       </select>
     </div>
-    <button type="button" class="btn btn-default" (click)="goBack()">go back</button>
-    <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">save</button>
-    <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
+    <button type="button" mat-raised-button color="primary" (click)="newHero(); heroForm.reset()">new hero</button>
+    <button type="button" mat-raised-button color="primary" (click)="goBack()">go back</button>
+    <button type="submit" mat-raised-button color="accent" [disabled]="!heroForm.form.valid">save</button>
+    
   </form>
 </div>
